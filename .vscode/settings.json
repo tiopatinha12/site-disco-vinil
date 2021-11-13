@@ -1,0 +1,4 @@
+{
+	"intelephense.format.braces": "k&r",
+	"php.suggest.basic": false,
+}
