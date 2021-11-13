@@ -1,0 +1,32 @@
+{
+	"name": "discomania/site",
+	"description": "site de compra e venda de vinis",
+	"type": "project",
+	"version": "0.1.0",
+	"minimum-stability": "stable",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Murage M.",
+			"email": "hello@mimidots.com"
+		},
+		{
+			"name": "Luan Vitor Simião Oliveira",
+			"email": "Luanv.oliveira@outlook.com",
+			"homepage": "https://github.com/LuanVSO"
+		}
+	],
+	"require": {
+		"php": ">=5.6.4",
+		"twig/twig": ">2.11.3",
+		"ext-json": "*"
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "app/",
+			"": [
+				"bootstrap/"
+			]
+		}
+	}
+}
