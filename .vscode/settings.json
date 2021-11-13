@@ -1,4 +1,6 @@
 {
 	"intelephense.format.braces": "k&r",
 	"php.suggest.basic": false,
+	"editor.formatOnPaste": true,
+	"editor.formatOnSave": true
 }
