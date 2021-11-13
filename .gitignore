@@ -1,0 +1,6 @@
+
+.idea/
+composer.lock
+[Vv]endor/
+.gitignore
+.env
