@@ -12,7 +12,7 @@
 |
 */
 require_once 'vendor/autoload.php';
-const siteinfo = ['appname' => 'Vinil Store', 'author' => 'Luanv.oliveira@outlook.com'];
+const siteinfo = ['appname' => 'Disco Mania', 'author' => 'Luanv.oliveira@outlook.com'];
 
 /**
  *

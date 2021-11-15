@@ -8,15 +8,15 @@
 	{% block header_content %}
 	<meta name="description" content="">
 	<meta name="author" content="{{ author }}">
-	<link rel="icon" href="favicon.ico">
-	<title>{{ pagename }} {{ appname }}</title>
+	<link href="/public/favicon.ico" rel="icon" type="image/x-icon" />
+	<title>{{ appname }} {{ pagename }}</title>
 
 	{% endblock %}
 
 	{% block styles %}
 	{#Bootstrap CSS#}
 	<link rel="stylesheet" href="/public/css/bootstrap.min.css">
-
+	<link rel="stylesheet" href="/public/css/app.css">
 	{% endblock %}
 
 </head>
@@ -25,8 +25,8 @@
 
 	{% block navigation %}
 
-	<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-		<a class="navbar-brand" href="#">{{ appname }}</a>
+	<nav class="navbar navbar-expand-md navbar-light">
+		<a class="navbar-brand" href="/home">{{ appname }}</a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav"
 			aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -35,15 +35,30 @@
 		<div class="collapse navbar-collapse" id="nav">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="/">Home</a>
+					<a class="nav-link" href="/login">Login</a>
 				</li>
 				<li class="nav-item active">
-					<a class="nav-link" href="/login">Entrar</a>
+					<a class="nav-link" href="/sobre">Sobre nós</a>
 				</li>
+				<li class="nav-item active">
+					<a class="nav-link" href="/contato">Contato</a>
+				</li>
+
+
+
 			</ul>
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-			</form>
+			<div>
+				<a href="https://twitter.com/Twitter">
+					<img src="/resources/img/twitter.png" width="22" height="22">
+				</a>
+
+				<a href="https://www.facebook.com/facebookappBrasil">
+					<img src="/resources/img/facebook.png" width="22" height="22">
+				</a>
+				<a href="https://www.instagram.com/instagram/">
+					<img src="/resources/img/instagram.png" width="22" height="22">
+				</a>
+			</div>
 		</div>
 	</nav>
 	{% endblock %}
