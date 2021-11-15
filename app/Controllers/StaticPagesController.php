@@ -18,4 +18,10 @@ class StaticPagesController {
 	public static function serveHome() {
 		view('home', ['somedata' => ["this", "is", "awesome"]]);
 	}
+	public static function serveSobre() {
+		view('sobre');
+	}
+	public static function serveContato() {
+		view('contato');
+	}
 }
