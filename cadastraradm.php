@@ -3,7 +3,7 @@
 $DB_servername = "localhost";
 $DB_username = "root";
 $DB_password = "";
-$DB_name = "disco-mania";
+$DB_name = "disco";
 try {
 	$conn = new PDO("mysql:host=$DB_servername;dbname=$DB_name", $DB_username, $DB_password);
 	$conn->beginTransaction();

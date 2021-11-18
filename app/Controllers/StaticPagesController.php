@@ -16,7 +16,7 @@ class StaticPagesController {
 	}
 
 	public static function serveHome() {
-		view('home', ['somedata' => ["this", "is", "awesome"]]);
+		view('home', ['produtos' => \App\Models\ProdutoModel::getAll()]);
 	}
 	public static function serveSobre() {
 		view('sobre');

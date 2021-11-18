@@ -1,8 +1,8 @@
+:root{
+	--bs-body-bg: var(--bs-gray-300);
+}
 
 .welcome{
     text-align: center;
     margin-top: 10%;
-}
-body{
-    background-color: #d3d3d3;
 }
