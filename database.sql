@@ -1,18 +1,88 @@
-create database disco;
-use disco;
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost
+-- Tempo de geração: 19-Nov-2021 às 21:10
+-- Versão do servidor: 10.4.21-MariaDB
+-- versão do PHP: 8.0.12
 
-create table administrador (
-	nome varchar(55),
-	senha char(255),
-	primary key(nome)
-);
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
 
-create table produto (
-	imagem varchar(255),
-	nome varchar(55),
-	banda varchar(55),
-	valor decimal(5,2),
-	quantidade int,
-	id int auto_increment,
-	primary key (id)
-);
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `disco`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `administrador`
+--
+
+CREATE TABLE `administrador` (
+  `nome` varchar(55) NOT NULL,
+  `senha` char(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `produto`
+--
+
+CREATE TABLE `produto` (
+  `imagem` varchar(255) NOT NULL,
+  `nome` varchar(55) NOT NULL,
+  `banda` varchar(55) NOT NULL,
+  `valor` decimal(15,2) NOT NULL,
+  `quantidade` bigint(20) NOT NULL DEFAULT 0,
+  `id` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `produto`
+--
+
+INSERT INTO `produto` (`imagem`, `nome`, `banda`, `valor`, `quantidade`, `id`) VALUES
+('dark_side.png', 'The Dark Side of The Moon', 'Pink Floyd', '200.00', 5, 1),
+('010508d06b3e8f578f0ca512f9d089bb3c39c3323ff959b01ebf751a1489cfd0.png', 'teste5', 'banda4', '200.00', 10, 7),
+('e0cab6df8d06dd7a34bb1d4118e3d6d28ead4f4db0437a8b79cf038706c25a19.png', 'Pools closed', 'Habbo', '1000.00', 100, 8);
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices para tabela `administrador`
+--
+ALTER TABLE `administrador`
+  ADD PRIMARY KEY (`nome`);
+
+--
+-- Índices para tabela `produto`
+--
+ALTER TABLE `produto`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `produto`
+--
+ALTER TABLE `produto`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

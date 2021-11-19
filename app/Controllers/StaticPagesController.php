@@ -24,4 +24,7 @@ class StaticPagesController {
 	public static function serveContato() {
 		view('contato');
 	}
+	public static function serveAddProduto() {
+		view('addProduto');
+	}
 }
