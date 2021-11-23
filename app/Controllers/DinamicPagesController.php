@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 use \App\Models\Produto;
 
-class CadastroController {
+class DinamicPagesController {
 	public static function addProduto() {
 		$prod = new Produto;
 		$imagem = $_FILES['imagem'];
@@ -21,5 +21,25 @@ class CadastroController {
 		$prod->imagem = $novonome;
 		\App\Models\ProdutoModel::add($prod);
 		header("Location:/add");
+	}
+	public static function serveCheckout() {
+		$array = $_POST['cart'];
+		$db = new \App\Services\DataBase;
+		$conn = $db->getConnection();
+		$stt = $conn->prepare("SELECT * from produto WHERE id IN ($array)");
+		$stt->execute();
+		$produtos = $stt->fetchAll(\PDO::FETCH_CLASS, "\App\Models\Produto");
+		if ($produtos == false) {
+			return;
+		}
+
+		$total = array_reduce(
+			$produtos,
+			function ($i, $obj) {
+				return $i += $obj->valor;
+			}
+		);
+
+		view("checkout", ['cart' => $produtos, 'total' => $total]);
 	}
 }

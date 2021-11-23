@@ -26,8 +26,9 @@
 						<p class="card-text">{{ produto.banda }}</p>
 						<div class="d-flex justify-content-between align-items-center">
 							<div class="btn-group">
-								<button type="button" class="btn btn-sm btn-outline-secondary"><i
-										class="bi bi-bag-plus"></i> adicionar ao
+								<button type="button" class="btn btn-sm btn-outline-secondary"
+									onclick="add_to_basket({{produto.id}})">
+									<i class="bi bi-bag-plus"></i> adicionar ao
 									carrinho</button>
 							</div>
 							<small class="text-success fw-bold">R$ {{ produto.valor }}</small>
@@ -39,6 +40,19 @@
 		</div>
 	</div>
 </div>
+{% endblock %}
 
+{% block add_script%}
+<script>
+	function add_to_basket(i) {
+		var cartStr = sessionStorage.getItem("cart");
+		var cartObj = [i];
+		if (cartStr) {
+			cartObj = JSON.parse(cartStr);
+			cartObj.push(i);
+		}
 
+		sessionStorage.setItem("cart", JSON.stringify(cartObj));
+	}
+</script>
 {% endblock %}

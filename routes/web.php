@@ -7,4 +7,5 @@ Router::get('home',  'StaticPagesController@serveHome');
 Router::get('sobre',  'StaticPagesController@serveSobre');
 Router::get('contato',  'StaticPagesController@serveContato');
 Router::get('add',  'StaticPagesController@serveAddProduto');
-Router::post('add', 'CadastroController@addProduto');
+Router::post('add', 'DinamicPagesController@addProduto');
+Router::post('checkout', 'DinamicPagesController@serveCheckout');
