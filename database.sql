@@ -19,7 +19,11 @@ SET time_zone = "+00:00";
 
 --
 -- Banco de dados: `disco`
+
 --
+drop database if exists disco;
+create database disco;
+use disco;
 
 -- --------------------------------------------------------
 
