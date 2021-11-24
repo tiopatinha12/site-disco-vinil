@@ -26,29 +26,21 @@
 <body class="text-center">
 
 	<main class="form-signin">
-		<form form_signature="616423465037941030"
-			form_signature_string="https://getbootstrap.com&amp;&amp;floatingInput&amp;floatingPassword">
+		<form method="post" action="/login">
 			<img class="mb-4" src="/resources/img/icone-login.png" alt="" width="72" height="auto">
 			<h1 class="h3 mb-3 fw-normal">Disco Mania</h1>
 			<div class="form-floating">
-				<input type="text" class="form-control" id="floatingInput" placeholder="name@example.com"
-					field_signature="643987688" form_signature="616423465037941030"
-					form_signature_string="https://getbootstrap.com&amp;&amp;floatingInput&amp;floatingPassword"
+				<input type="text" class="form-control" name="usuario" id="floatingInput" placeholder="nome"
 					visibility_annotation="true" pm_parser_annotation="username_element">
 				<label for="floatingInput">Usuário</label>
 			</div>
 			<div class="form-floating">
-				<input type="password" class="form-control" id="floatingPassword" placeholder="Password"
-					field_signature="3387761017" form_signature="616423465037941030"
-					form_signature_string="https://getbootstrap.com&amp;&amp;floatingInput&amp;floatingPassword"
+				<input type="password" class="form-control" name="senha" id="floatingPassword" placeholder="senha"
 					visibility_annotation="true" pm_parser_annotation="password_element">
 				<label for="floatingPassword">Senha</label>
 			</div>
 
-			<div class="checkbox mb-3">
-
-			</div>
-			<button class="w-100 btn btn-lg btn-primary" type="submit">Entrar</button>
+			<button class="w-100 btn btn-lg btn-primary">Entrar</button>
 			<p class="mt-5 mb-3 text-muted">© 2020–2021</p>
 		</form>
 	</main>

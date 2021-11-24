@@ -52,9 +52,7 @@ CREATE TABLE `produto` (
 --
 
 INSERT INTO `produto` (`imagem`, `nome`, `banda`, `valor`, `quantidade`, `id`) VALUES
-('dark_side.png', 'The Dark Side of The Moon', 'Pink Floyd', '200.00', 5, 1),
-('010508d06b3e8f578f0ca512f9d089bb3c39c3323ff959b01ebf751a1489cfd0.png', 'teste5', 'banda4', '200.00', 10, 7),
-('e0cab6df8d06dd7a34bb1d4118e3d6d28ead4f4db0437a8b79cf038706c25a19.png', 'Pools closed', 'Habbo', '1000.00', 100, 8);
+('dark_side.png', 'The Dark Side of The Moon', 'Pink Floyd', '200.00', 5, 1)
 
 --
 -- Índices para tabelas despejadas
