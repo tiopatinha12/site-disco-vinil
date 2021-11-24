@@ -1,0 +1,24 @@
+{% extends "partials/template.twig" %}
+
+{% block content %}
+
+<form class="form-check" action="/add" method="post" enctype="multipart/form-data">
+	<input type="hidden" name="MAX_FILE_SIZE" value="4194304" />
+	<label for="imagem">imagem</label>
+	<input type="file" accept="image/*" name="imagem" id="imagem">
+	<br>
+	<labelLocation: for="nome">nome:</label>
+		<input type="text" class="form-control" name="nome" id="nome">
+		<br>
+		<label for="banda">banda:</label>
+		<input type="text" class="form-control" name="banda" id="banda">
+		<br>
+		<label for="valor">valor R$</label>
+		<input type="number" class="form-control" name="valor" id="valor" step="0.01">
+		<br>
+		<label for="quantidade">quantidade:</label>
+		<input type="number" class="form-control" name="quantidade" step="1">
+		<button type="submit" class="form-control btn-outline-primary">enviar</button>
+</form>
+
+{% endblock %}

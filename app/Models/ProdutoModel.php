@@ -4,18 +4,6 @@ namespace App\Models;
 
 use PDO;
 
-class Produto {
-	public $imagem;
-	public string $nome;
-	public string $banda;
-	public $valor;
-	public $quantidade;
-	public $id;
-	public function __toString() {
-		return $this->imagem . $this->nome . $this->banda;
-	}
-}
-
 class ProdutoModel extends Model {
 
 	static function getAll() {
@@ -45,18 +33,18 @@ class ProdutoModel extends Model {
 		$stt->execute();
 		$conn->commit();
 	}
-	static function add(Produto &$prod) {
+	static function add(Produto $prod) {
 		$db = new \App\Services\DataBase;
 		$conn = $db->getConnection();
 		$conn->beginTransaction();
-		$stt = $conn->prepare("INSERT INTO produto (imagem,nome,banda,valor) VALUES (:imagem,:nome,:banda,:valor)");
+		$stt = $conn->prepare("INSERT INTO produto (imagem,nome,banda,valor,quantidade) VALUES (:imagem,:nome,:banda,:valor,:qtde)");
 		$stt->bindParam("imagem", $prod->imagem);
 		$stt->bindParam("nome", $prod->nome);
 		$stt->bindParam("banda", $prod->banda);
 		$stt->bindParam("valor", $prod->valor);
+		$stt->bindParam("qtde", $prod->quantidade);
 		$stt->execute();
 		$auto = $stt->fetch();
-		$prod->id = $auto['id'];
 		$conn->commit();
 	}
 }
